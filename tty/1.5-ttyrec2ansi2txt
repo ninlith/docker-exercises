@@ -1,0 +1,36 @@
+hobitti@koneisto:~/docker-exercises/part1$ docker pull devopsdockeruh/simple-web-service:ubuntu
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Image is up to date for devopsdockeruh/simple-web-service:ubuntu
+hobitti@koneisto:~/docker-exercises/part1$ dock er pull devopsdockeruh/simple-web-service:alpine
+alpine: Pulling from devopsdockeruh/simple-web-service
+
+ba3557a56b15: Pulling fs layer 
+1dace236434b: Pulling fs layer 
+4f4fb700ef54: Pulling fs layer 4f4fb700ef54: Downloading [==================================================>]      32B/32B4f4fb700ef54: Verifying Checksum 4f4fb700ef54: Download complete ba3557a56b15: Downloading [>                                                  ]  29.17kB/2.812MB1dace236434b: Downloading [>                                                  ]  52.24kB/5.117MBba3557a56b15: Downloading [=======>                                           ]  441.4kB/2.812MB1dace236434b: Downloading [========>                                          ]  858.5kB/5.117MBba3557a56b15: Downloading [=================>                                 ]  994.5kB/2.812MB1dace236434b: Downloading [=================>                                 ]  1.833MB/5.117MBba3557a56b15: Downloading [==========================>                        ]  1.486MB/2.812MB1dace236434b: Downloading [=========================>                         ]  2.608MB/5.117MBba3557a56b15: Downloading [================================>                  ]  1.822MB/2.812MB1dace236434b: Downloading [===================================>               ]  3.586MB/5.117MBba3557a56b15: Downloading [==========================================>        ]  2.379MB/2.812MB1dace236434b: Downloading [==========================================>        ]  4.365MB/5.117MBba3557a56b15: Verifying Checksum ba3557a56b15: Download complete ba3557a56b15: Extracting [>                                                  ]  32.77kB/2.812MB1dace236434b: Verifying Checksum 1dace236434b: Download complete ba3557a56b15: Extracting [=>                                                 ]   98.3kB/2.812MBba3557a56b15: Extracting [=======================>                           ]  1.311MB/2.812MBba3557a56b15: Extracting [===============================================>   ]  2.687MB/2.812MBba3557a56b15: Extracting [==================================================>]  2.812MB/2.812MBba3557a56b15: Pull complete 1dace236434b: Extracting [>                                                  ]  65.54kB/5.117MB1dace236434b: Extracting [=>                                                 ]  131.1kB/5.117MB1dace236434b: Extracting [============>                                      ]  1.311MB/5.117MB1dace236434b: Extracting [=======================>                           ]  2.425MB/5.117MB1dace236434b: Extracting [=================================================> ]  5.112MB/5.117MB1dace236434b: Extracting [==================================================>]  5.117MB/5.117MB1dace236434b: Pull complete 4f4fb700ef54: Extracting [==================================================>]      32B/32B4f4fb700ef54: Extracting [==================================================>]      32B/32B4f4fb700ef54: Pull complete Digest: sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:alpine
+hobitti@koneisto:~/docker-exercises/part1$ docker image -ls
+REPOSITORY                          TAG                 IMAGE ID            CREATED             SIZE
+devopsdockeruh/simple-web-service   ubuntu              4e3362e907d5        4 weeks ago         83MB
+devopsdockeruh/simple-web-service   alpine              fd312adc88e0        4 weeks ago         15.7MB
+ubuntu                              latest              4dd97cefde62        5 weeks ago         72.9MB
+hobitti@koneisto:~/docker-exercises/part1$ docker run -d --rm -it --name secret_message devopsdockeruh/simple-web-service:alpine
+b0e395df2d32485b063c6a64517eb7e979dc4843465d854805dc0661c951a412
+hobitti@koneisto:~/docker-exercises/part1$ docker exec -it secret_message sh
+/usr/src/app # /usr/src/app # tail -f ./text.log 
+2021-04-12 08:01:17 +0000 UTC
+2021-04-12 08:01:19 +0000 UTC
+2021-04-12 08:01:21 +0000 UTC
+2021-04-12 08:01:23 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-04-12 08:01:25 +0000 UTC
+2021-04-12 08:01:27 +0000 UTC
+2021-04-12 08:01:29 +0000 UTC
+2021-04-12 08:01:31 +0000 UTC
+2021-04-12 08:01:33 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-04-12 08:01:35 +0000 UTC
+2021-04-12 08:01:37 +0000 UTC
+^C
+/usr/src/app # 
+130 hobitti@koneisto:~/docker-exercises/part1$ exit

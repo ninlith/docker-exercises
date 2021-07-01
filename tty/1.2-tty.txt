@@ -1,0 +1,28 @@
+hobitti@koneisto:~$ docker container stop quirky_chatelet 
+quirky_chatelet
+hobitti@koneisto:~$ docker container prune 
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+7a8587d35eac204def3c2c22c594137459c82beb151b3b756cbcf592855e8153
+ae9ef62039fa0dcdf9bfbf4771a7ef56694cffb822b5a014ee5226d5ce2943b7
+ee85a8cfb4f7f89f58fa9f87744e979fc5c2b9443abade807d9a4a5215480e3f
+761e685da3240dbaf3a55b9c307fed4d33acd7c51ffed480aba9afeea2678c9a
+ea4e1407b6f51c767eddd7d6b77a7592bfc913ff3708ac59a78e26b93ccef467
+
+Total reclaimed space: 5.57kB
+hobitti@koneisto:~$ docker image rm nginx:latest 
+Untagged: nginx:latest
+Untagged: nginx@sha256:d2925188effb4ddca9f14f162d6fba9b5fab232028aa07ae5c1dab764dca8f9f
+Deleted: sha256:6084105296a952523c36eea261af38885f41e9d1d0001b4916fa426e45377ffe
+Deleted: sha256:3b172069177f8982c1df589c155bfb7482b3f3fb90ef284a34013e0b63e0fe6c
+Deleted: sha256:03c12533ac40107c4b01c74df19b35e63948474b7cfbc9829ab26b094f90de31
+Deleted: sha256:123667e139767c1fe3bbf4310a80eaca32ab2944b42d0e0863d66dc09215a2e9
+Deleted: sha256:96c2aa1177733f403679550776da7e9dcb3b4f0e46e0548467e013017dd8ee23
+Deleted: sha256:2df57a38a8fcc8e4e459ade73b0f8d85b19ed4f6b39eb4686eddd5118b99c256
+Deleted: sha256:14a1ca976738392ffa2ae4e54934ba28ab9cb756e924ad9297a4795a4adbfdf6
+hobitti@koneisto:~$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+hobitti@koneisto:~$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hobitti@koneisto:~$ 
